@@ -39,7 +39,7 @@ export class NewBookComponent implements OnInit {
 		console.log("response", this.book);
 		this.author.books.push(this.book);
 		this._dataService.updateAuthor(this.author).subscribe(response => {
-			(response.error?this.submit_error = response.error:this._router.navigate(['/']))
+			(response.error?this.submit_error = response.error:this._router.navigate(['/authors']))
 		});
 	}
 

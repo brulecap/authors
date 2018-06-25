@@ -7,7 +7,7 @@ import { Author } from './author';
 
 @Injectable()
 export class DataService {
-	base = "http://localhost:8000/";
+	base = "http://localhost:8000/books_api/";
 
 	constructor(private _http: HttpClient) {}
 

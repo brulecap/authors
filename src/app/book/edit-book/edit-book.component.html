@@ -1,4 +1,5 @@
 <h1>Edit Book</h1>
+<a class="home" [routerLink]="['/authors']">Home</a>
 <div>
 	<div *ngIf="submit_error">
 		<p *ngFor="let error of submit_error" class="text-danger">{{ error }}</p> 
@@ -13,7 +14,7 @@
 			<input type="number" name="year" id="year"  [(ngModel)]="book.year" #book_year='ngModel'>
 		</div>
 		<div class="button_group">
-			<a class="btn btn-info" [routerLink]="['']">Cancel</a> 
+			<a class="btn btn-info" [routerLink]="['/authors']">Cancel</a> 
 			<input class="btn btn-info" type="submit" value="Submit">
 		</div>
 	</form>

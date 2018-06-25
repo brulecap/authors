@@ -21,7 +21,7 @@ require('./server/config/mongoose.js');
 var routes_setter = require('./server/config/routes.js');
 // invoke the routes function stored in routes_setter and pass it the "app" variable
 routes_setter(app);
-// Start Node server listening on port 8000.
-var server = app.listen(8000, function() {
-	console.log("listening");
+// Start Node server listening on port specified by environment variable if defined, port 8000 otherwise.
+var server = app.listen(process.env.PORT || 8000, function() {
+	console.log(process.env.PORT || 8000);
 });

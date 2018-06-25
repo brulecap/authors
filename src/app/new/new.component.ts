@@ -20,6 +20,7 @@ export class NewComponent implements OnInit {
 	ngOnInit() {
 	}
 	onSubmit(event, form_data) {
+		console.log("response", this.author);
 		this._dataService.createAuthor(this.author).subscribe(response => {
 			(response.error?this.submit_error = response.error:this._router.navigate(['']))
 		});

@@ -1,0 +1,20 @@
+<h1>Create New Book</h1>
+<div>
+	<div *ngIf="submit_error">
+		<p *ngFor="let error of submit_error" class="text-danger">{{ error }}</p> 
+	</div>
+	<form (submit)="onSubmit($event, formData)" #formData='ngForm'>
+		<div>
+			<label for="title">Title:</label>
+			<input type="text" name="title" id="title" [(ngModel)]="book.title" #book_title='ngModel'>
+		</div>
+		<div>
+			<label for="year">Year Published:</label>
+			<input type="number" name="year" id="year"  [(ngModel)]="book.year" #book_year='ngModel'>
+		</div>
+		<div class="button_group">
+			<a class="btn btn-info" [routerLink]="['']">Cancel</a> 
+			<input class="btn btn-info" type="submit" value="Submit">
+		</div>
+	</form>
+</div>

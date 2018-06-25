@@ -13,7 +13,6 @@ import 'rxjs/add/operator/switchMap';
 })
 export class EditComponent implements OnInit {
 	author: Author;
-	submit_response: string = "";
 	submit_error: string = "";
 
 		constructor(private _router: Router,
@@ -25,6 +24,7 @@ export class EditComponent implements OnInit {
 			.switchMap(params => this._dataService.getAuthor(params.get('id')))
 			.subscribe(author => (this.author = author));
 	}
+
 	onSubmit(event, form) {
 		event.preventDefault();
 		this._dataService.updateAuthor(this.author).subscribe(response => {

@@ -21,11 +21,9 @@ export class DataService {
 		return this._http.delete(`${this.base}authors/${id}`);
 	}
 	updateAuthor(author: Author): Observable<any> {
-		console.log("updating author", author);
 		return this._http.put(`${this.base}authors/${author._id}/`, author);
 	}
 	createAuthor(author: Author): Observable<any> {
-		console.log("creating author", author);
 		return this._http.post(`${this.base}authors/`, author);
 	}
 }

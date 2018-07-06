@@ -3,7 +3,6 @@ var author = require('../controllers/author.js');
 module.exports = function(app) {
 	// root route to display all authors or just one if optional id param supplied
 	app.get("/books_api/authors/:id?/", function (request, response, next) {
-
 		author.show(request, response);
 	})
 	// route to insert author

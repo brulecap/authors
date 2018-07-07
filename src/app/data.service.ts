@@ -7,7 +7,7 @@ import { Author } from './author';
 
 @Injectable()
 export class DataService {
-	base = process.env.BOOKS_API || "http://localhost:8000/books_api/";
+	base = "http://brucelecaptain.com/books_api/";
 
 	constructor(private _http: HttpClient) {}
 

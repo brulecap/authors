@@ -13,13 +13,13 @@ import { EditBookComponent } from './book/edit-book/edit-book.component';
 */
 const routes: Routes = [
 	// Home page
-	{path: 'authors', pathMatch: 'full', component: HomeComponent},
+	{path: '', pathMatch: 'full', component: HomeComponent},
 	// New author
-	{path: 'authors/new', component: NewComponent},
+	{path: 'new', component: NewComponent},
 	// Edit author
-	{path: 'authors/edit/:id', component: EditComponent},
+	{path: 'edit/:id', component: EditComponent},
 	// Book pages
-	{path: 'authors/book', component: BookComponent, children:[
+	{path: 'book', component: BookComponent, children:[
 		// Edit book
 		{ path: 'edit/:id/:book', component: EditBookComponent },
 		{ path: 'new/:id', component: NewBookComponent }

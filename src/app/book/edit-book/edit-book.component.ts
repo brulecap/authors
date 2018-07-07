@@ -40,7 +40,7 @@ export class EditBookComponent implements OnInit {
 		this.author.books[this.book_index].title = this.book.title;
 		this.author.books[this.book_index].year = this.book.year;
 		this._dataService.updateAuthor(this.author).subscribe(response => {
-			(response.error?this.submit_error = response.error:this._router.navigate(['/authors']))
+			(response.error?this.submit_error = response.error:this._router.navigate(['/']))
 		});
 	}
 

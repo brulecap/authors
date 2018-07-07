@@ -28,7 +28,7 @@ export class EditComponent implements OnInit {
 	onSubmit(event, form) {
 		event.preventDefault();
 		this._dataService.updateAuthor(this.author).subscribe(response => {
-			(response.error?this.submit_error = response.error:this._router.navigate(['/authors']))
+			(response.error?this.submit_error = response.error:this._router.navigate(['/']))
 		});
 	}
 }

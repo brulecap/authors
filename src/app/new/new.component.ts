@@ -22,7 +22,7 @@ export class NewComponent implements OnInit {
 	onSubmit(event, form_data) {
 		console.log("response", this.author);
 		this._dataService.createAuthor(this.author).subscribe(response => {
-			(response.error?this.submit_error = response.error:this._router.navigate(['/authors']))
+			(response.error?this.submit_error = response.error:this._router.navigate(['/']))
 		});
 	}
 

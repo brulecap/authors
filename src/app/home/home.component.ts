@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 			// Deleting author
 			console.log("null");
 			this._dataService.deleteAuthor(author_id).subscribe(response => {
-				(response.error?this.submit_error = response.error:(this.getAuthors(), this._router.navigate(['/authors'])))
+				(response.error?this.submit_error = response.error:(this.getAuthors(), this._router.navigate(['/'])))
 			});
 		} else {
 			// Deleting book. Get author, remove book, and update author.
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
 				this.author = author;
 				this.author.books.splice(book_index, 1);
 				this._dataService.updateAuthor(this.author).subscribe(response => {
-					(response.error?this.submit_error = response.error:(this.getAuthors(), this._router.navigate(['/authors'])))
+					(response.error?this.submit_error = response.error:(this.getAuthors(), this._router.navigate(['/'])))
 				});
 			});		
 			console.log("Delete book", book_index);

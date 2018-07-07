@@ -18,7 +18,7 @@ var AuthorSchema = new mongoose.Schema({
 				  required: [true, "Birthdate is required."]},
 	books: 		[{
 				   title: { type: String,
-							required:[true, "title is required."],
+							required:[true, "Title is required."],
 							minlength: [2, "Book title must be at least 2 characters."]},
 				   year: {	type: Number,
 							required: [true, "Book year is required."],

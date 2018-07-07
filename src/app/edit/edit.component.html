@@ -3,7 +3,7 @@
 	<h1>Edit Author</h1>
 </div>
 <div class="col-xs-6 col-sm-3">
-	<a class="home" [routerLink]="['/authors']">Home</a>
+	<a class="home" [routerLink]="['/']">Home</a>
 </div>
 </div>
 <div class="row">
@@ -29,7 +29,7 @@
 				<input type="text" name="country" id="country" [(ngModel)]="author.country" #country='ngModel'>
 			</div>
 			<div class="button_group">
-				<a class="btn btn-info" [routerLink]="['/authors']">Cancel</a> 
+				<a class="btn btn-info" [routerLink]="['/']">Cancel</a> 
 				<input class="btn btn-info" type="submit" value="Submit">
 			</div>
 		</form>

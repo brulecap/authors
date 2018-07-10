@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../environments/environment';
 
 import { Author } from './author';
 
 
 @Injectable()
 export class DataService {
-	base = "http://brucelecaptain.com/books_api/";
+	base = "http://localhost:8000/books_api/";
 
-	constructor(private _http: HttpClient) {}
+	constructor(private _http: HttpClient) {
+		if (environment.production) {
+			this.base = "http://brucelecaptain.com/books_api/";
+		}
+	}
 
 	getAuthors(id=""): Observable<any> {
 		return this._http.get(`${this.base}authors/`);

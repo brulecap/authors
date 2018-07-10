@@ -1,6 +1,5 @@
 function prettifyErrors(errors) {
 	let error = Object.keys(errors).map(key => {
-		console.log("errors", key,errors[key]);
 		return errors[key].message;
 	});
 	return {"error":error};
@@ -31,7 +30,8 @@ module.exports = {
 		var author = new Author({first_name:request.body.first_name,
 								 last_name:request.body.last_name,
 								 country:request.body.country,
-								 birthdate:request.body.birthdate});
+								 birthyear:request.body.birthyear,
+								 deathyear:request.body.deathyear});
 		author.save()
 			.then(function() {
 				response.json({status:"okay"});
@@ -41,13 +41,13 @@ module.exports = {
 			})
 	},
 	update: function(request, response) {
-		console.log("update", request.body);
 		Author.findOne({_id:request.params.id})
 			.then(function(author) {
 				author.first_name = request.body.first_name;
 				author.last_name = request.body.last_name;
 				author.country = request.body.country;
-				author.birthdate = request.body.birthdate;
+				author.birthyear = request.body.birthyear;
+				author.deathyear = request.body.deathyear;
 				author.books = request.body.books;
 				author.save()
 					.then(function() {

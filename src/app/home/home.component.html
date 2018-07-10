@@ -5,7 +5,7 @@
 		<thead class="gray">
 			<tr>
 				<th>Author</th>
-				<th>Bithdate</th>
+				<th>Lifespan</th>
 				<th>Country</th>
 				<th>Books</th>
 				<th>Actions Available</th>
@@ -14,7 +14,7 @@
 		<tbody *ngFor="let author of authors | filter:searchText; let idx=index">
 			<tr [ngClass]="{ 'gray': idx%2 !=0 }">
 				<td>{{ author.first_name }} {{ author.last_name }}</td>
-				<td>{{ author.birthdate }}</td>
+				<td>{{ author.birthyear }} - {{ author.deathyear }}</td>
 				<td>{{ author.country }}</td>
 				<td>
 					<table *ngIf="author.books.length; else elseBlock" class="books">

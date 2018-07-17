@@ -1,17 +1,3 @@
-table {
-	border-collapse: collapse;
-	width: 75%;
-	margin: 10px;
-}
-
-table, th, td {
-	border: 1px solid black;
-}
-
-th, td, a {
-	margin: 10px;
-}
-
 ul {
 	list-style-type: none;
 }
@@ -26,23 +12,40 @@ a:link {
 }
 
 input {
-	width: 360px;
+	width: 120px;
 }
 
 p {
 	margin-left: 10px;
 }
 
-.gray {
-	background-color: #d3d3d3;
+th {
+	padding: 5px;
+}
+
+li input {
+	margin-top: 5px;
+}
+
+#new_author {
+	margin: 0 0 15px 0;
+}
+
+.search_add {
+	white-space: nowrap;
+	padding: 0;
+}
+
+.search_add input {
+	margin-right: 100px;
+}
+
+.search_add li {
+	display: inline-block;
 }
 
 .border_bottom {
 	border-bottom: 1px solid gray;
-}
-
-.books, .books th, .books td {
-	border: none;
 }
 
 .btn {

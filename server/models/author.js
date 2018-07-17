@@ -17,7 +17,7 @@ var AuthorSchema = new mongoose.Schema({
 	birthyear: 	{ type: Number,
 				  required: [true, "Birth year is required."]},
 	deathyear: 	{ type: Number,
-				  validate: [{ validator: function( deathyear ) {console.log("VALIDATE", deathyear, this.birthyear);return ((deathyear > this.birthyear) && ((deathyear-150)<this.birthyear));
+				  validate: [{ validator: function( deathyear ) {return ((deathyear > this.birthyear) && ((deathyear-150)<this.birthyear));
 				  										   },message: "Year of death must be greater than year of birth and authors age must be less than 150."}]},
 	books: 		[{
 				   title: { type: String,

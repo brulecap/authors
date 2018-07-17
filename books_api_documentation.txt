@@ -1,0 +1,34 @@
+export class Author {
+	public _id: string = "";
+	public first_name: string = ""; // Required, minimum 2 characters
+	public last_name: string = ""; // Required, minimum 2 characters
+	public birthyear: number; // Required number
+	public deathyear: number; // Optional, if included must be greater than birthyear
+				  // and age at death must be less than 150.
+	public country: string = ""; // Required, minimum 3 characters
+	public books: Array<any> = [];
+	public created_at: Date = new Date();
+	public updated_at: Date = new Date();
+
+	constructor(){}
+}
+
+books is an array of book objects as follows:
+
+	{title: string, // Required, minimum 2 characters
+	 year: number} // Required, must be in the past
+
+// URL to display all authors or just one if optional id param supplied
+Perfom get to http://brucelecaptain.com/books_api/authors/:id?/
+
+// URL to insert author - books if supplied is ignored. //TODO Allow books in new author
+Perfom post to http://brucelecaptain.com/books_api/authors/
+
+// URL to update author. New book can be included and is the method for inserting books.
+Perfom put to http://brucelecaptain.com/books_api/authors/:id/", function (request, response, 
+
+// URL to delete author by id
+Perfom delete to http://brucelecaptain.com/books_api/authors/:id/
+
+// URL to delete book from author. id is the index of the book in the books array
+Perfom delete to http://brucelecaptain.com/books_api/books/:id/

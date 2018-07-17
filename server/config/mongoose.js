@@ -9,7 +9,7 @@ var mongoUrl = "mongodb://localhost/authors"
 
 mongoose.connect(mongoUrl)
 	.then(res => console.log("Connected to DB"))
-	.catch(err => { console.log('error');
+	.catch(err => { console.log('Error connecting to db');
 				  });
 
 // create a variable that points to the path where all of the models live

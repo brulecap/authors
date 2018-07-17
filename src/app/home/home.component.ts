@@ -14,9 +14,14 @@ export class HomeComponent implements OnInit {
 	author: Author = null;
 	submit_error: string = "";
 	submit_response: string = "";
-    searchText: string = "";
+	fullName: string = "";
+	country: string = "";
+	year: number;
+
+
 	constructor(private _router: Router,
-				private _dataService: DataService) { }
+				private _dataService: DataService) {
+	}
 
 	ngOnInit() {
 		this.getAuthors();

@@ -1,0 +1,11 @@
+label, input, a {
+	display: inline-block;
+}
+
+label {
+	width: 150px;
+}
+
+input[type="text"], input[type="number"] {
+	width: 175px;
+}

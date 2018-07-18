@@ -15,7 +15,7 @@ export class FilterPipe implements PipeTransform {
 					return it;
 				}
 			}
-			if (year && (it.birthyear.toString().includes(year) || it.deathyear.toString().includes(year))) {
+			if (year && (it.birthyear.toString().includes(year) || (it.deathyear && it.deathyear.toString().includes(year)))) {
 				return it;
 			}
 			if (country && it.country.toLowerCase().includes(country.toLowerCase())) {

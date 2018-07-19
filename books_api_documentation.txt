@@ -1,34 +1,26 @@
-export class Author {
-	public _id: string = "";
-	public first_name: string = ""; // Required, minimum 2 characters
-	public last_name: string = ""; // Required, minimum 2 characters
-	public birthyear: number; // Required number
-	public deathyear: number; // Optional, if included must be greater than birthyear
-				  // and age at death must be less than 150.
-	public country: string = ""; // Required, minimum 3 characters
-	public books: Array<any> = [];
-	public created_at: Date = new Date();
-	public updated_at: Date = new Date();
+/***************************** MUST READ *****************************/
+When creating a new author, books is ignored if provided.
+When updating an author, updating a book, or deleting a book, the author object is considered to be
+complete including the book array. Example: If an author had 7 books and you updated the author with
+an empty books array. All those books would be deleted as well.
 
-	constructor(){}
-}
+TODO: An author should be able to be updated without including books. A book should be able to be deleted
+with just the author id and book id and a book should be able to be updated with just a author id, book id
+and book object. 
 
-books is an array of book objects as follows:
 
-	{title: string, // Required, minimum 2 characters
-	 year: number} // Required, must be in the past
 
 // URL to display all authors or just one if optional id param supplied
 Perfom get to http://brucelecaptain.com/books_api/authors/:id?/
 
-// URL to insert author - books if supplied is ignored. //TODO Allow books in new author
+// URL to insert author - books if supplied is ignored. // TODO Allow books in new author
 Perfom post to http://brucelecaptain.com/books_api/authors/
 
-// URL to update author. New book can be included and is the method for inserting books.
+// URL to update author. New book can be included and is the method for inserting books. See MUST READ above 
 Perfom put to http://brucelecaptain.com/books_api/authors/:id/", function (request, response, 
 
 // URL to delete author by id
 Perfom delete to http://brucelecaptain.com/books_api/authors/:id/
 
-// URL to delete book from author. id is the index of the book in the books array
+// URL to delete book from author. id is the index of the book in the books array.  See MUST READ above
 Perfom delete to http://brucelecaptain.com/books_api/books/:id/

@@ -12,7 +12,7 @@ export class DataService {
 
 	constructor(private _http: HttpClient) {
 		if (environment.production) {
-			this.base = "http://brucelecaptain.com/books_api/";
+			this.base = "https://brucelecaptain.com/books_api/";
 		}
 	}
 
